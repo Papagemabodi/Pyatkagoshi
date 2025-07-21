@@ -2,7 +2,7 @@
 
 Tutorial is very messy because I'm writing it while being half asleep
 
-Default root password is 9519
+
 
 Download arch install iso and burn on a usb drive;
 
