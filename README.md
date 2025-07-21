@@ -7,11 +7,7 @@ Why?
 
 Idk
 
-
-
-
-
-
+I will upload first version when I'll fix mess with kernel and will be sure that it can be usable without brainfuck
 
 
 
@@ -69,7 +65,8 @@ FURTHER COMMANDS ARE EXECUTED WHILE CHROOTED, IF YOU BREAK SOMETHING IT'S NOT MY
 
 Recompile dracut(just to be safe):
 
-`dracut --force --kver 6.15.7-arch1-1 /boot/initramfs-linux.img
+`dracut --force --regenerate-all` or if it won't work, try:
+`dracut --force /boot/initramfs-linux.img
 `
 
 
@@ -102,12 +99,10 @@ Nvidia fix(do only if you have nvidia card):
 Now insert those lines: 
 
 `force_drivers+=" nvidia nvidia_modeset nvidia_uvm nvidia_drm "`
-`add_dracutmodules+=" drm "`
-`hostonly="yes"`
 
 Save (ctrl S) and exit (ctrl Q)
 
-`dracut --force --kver 6.15.7-arch1-1 /boot/initramfs-linux.img` (every time you append a dracut config you have to recompile it)
+`dracut --force /boot/initramfs-linux.img` (every time you append a dracut config you have to recompile it)
 
 
 
