@@ -44,7 +44,7 @@ FURTHER COMMANDS ARE EXECUTED WHILE CHROOTED, IF YOU BREAK SOMETHING IT'S NOT MY
 
 Recompile dracut(just to be safe):
 
-`dracut --force --kver 6.15.7-arch1-1 /boot/initramfs-6.15.7.img
+`dracut --force --kver 6.15.7-arch1-1 /boot/initramfs-linux.img
 `
 
 
@@ -82,7 +82,7 @@ hostonly="yes"`
 
 Save (ctrl S) and exit (ctrl Q)
 
-`dracut --force --kver 6.15.7-arch1-1 /boot/initramfs-6.15.7.img` (every time you append a dracut config you have to recompile it)
+`dracut --force --kver 6.15.7-arch1-1 /boot/initramfs-linux.img` (every time you append a dracut config you have to recompile it)
 
 
 
