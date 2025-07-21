@@ -44,7 +44,7 @@ FURTHER COMMANDS ARE EXECUTED WHILE CHROOTED, IF YOU BREAK SOMETHING IT'S NOT MY
 
 Recompile dracut(just to be safe):
 
-`dracut --force`
+`dracut --force --kver 6.15.7-arch1-1`
 
 
 
