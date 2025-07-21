@@ -1,5 +1,30 @@
 # Pyatkagoshi
 
+
+My own arch distro with a bunch of preinstalled useful packets and dracut instead of mkcpioinit
+
+Why?
+
+Idk
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Tutorial is very messy because I'm writing it while being half asleep
 
 
