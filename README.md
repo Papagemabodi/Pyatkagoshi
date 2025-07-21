@@ -15,15 +15,15 @@ Find it by typing `lsblk` (for example `/dev/sdX`);
 
 Prepare EFI and main partitions on target drive:
 
-`mkfs.fat -F32 /dev/sdX1
-mkfs.ext4 /dev/sdX2`
+`mkfs.fat -F32 /dev/sdX1`
+`mkfs.ext4 /dev/sdX2`
 
 
 Mount:
 
-`mount /dev/sdX2 /mnt
-mkdir /mnt/boot/efi
-mount /dev/sdX1 /mnt/boot/efi`
+`mount /dev/sdX2 /mnt`
+`mkdir /mnt/boot/efi`
+`mount /dev/sdX1 /mnt/boot/efi`
 
 Download it from releases;
 
@@ -53,16 +53,16 @@ Grub, bootloader:
 
 `pacman -S grub efibootmgr`
 
-`grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
-grub-mkconfig -o /boot/grub/grub.cfg`
+`grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB`
+`grub-mkconfig -o /boot/grub/grub.cfg`
 
 
 Misc:
 
 Generate host name 
 
-`touch /etc/hostname (if not there)
-echo "whateveryouwanthere" > /etc/hostname`
+`touch /etc/hostname (if not there)`
+`echo "whateveryouwanthere" > /etc/hostname`
 
 OR:
 
@@ -70,15 +70,15 @@ OR:
 
 Nvidia fix(do only if you have nvidia card):
 
-`pacman -S nvidia nvidia-utils
-touch /etc/dracut.conf.d/nvidia.conf
-micro /etc/dracut.conf.d/nvidia.conf`
+`pacman -S nvidia nvidia-utils`
+`touch /etc/dracut.conf.d/nvidia.conf`
+`micro /etc/dracut.conf.d/nvidia.conf`
 
 Now insert those lines: 
 
-`force_drivers+=" nvidia nvidia_modeset nvidia_uvm nvidia_drm "
-add_dracutmodules+=" drm "
-hostonly="yes"`
+`force_drivers+=" nvidia nvidia_modeset nvidia_uvm nvidia_drm "`
+`add_dracutmodules+=" drm "`
+`hostonly="yes"`
 
 Save (ctrl S) and exit (ctrl Q)
 
