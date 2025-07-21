@@ -22,8 +22,8 @@ mkfs.ext4 /dev/sdX2`
 Mount:
 
 `mount /dev/sdX2 /mnt
-mkdir /mnt/efi
-mount /dev/sdX1 /mnt/efi`
+mkdir /mnt/boot/efi
+mount /dev/sdX1 /mnt/boot/efi`
 
 Download it from releases;
 
@@ -44,7 +44,8 @@ FURTHER COMMANDS ARE EXECUTED WHILE CHROOTED, IF YOU BREAK SOMETHING IT'S NOT MY
 
 Recompile dracut(just to be safe):
 
-`dracut --force --kver 6.15.7-arch1-1`
+`dracut --force --kver 6.15.7-arch1-1 /boot/initramfs-6.15.7.img
+`
 
 
 
@@ -52,7 +53,7 @@ Grub, bootloader:
 
 `pacman -S grub efibootmgr`
 
-`grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
+`grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg`
 
 
@@ -81,7 +82,7 @@ hostonly="yes"`
 
 Save (ctrl S) and exit (ctrl Q)
 
-`dracut --force` (every time you append a dracut config you have to recompile it)
+`dracut --force --kver 6.15.7-arch1-1 /boot/initramfs-6.15.7.img` (every time you append a dracut config you have to recompile it)
 
 
 
